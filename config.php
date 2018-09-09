@@ -7,7 +7,7 @@
  */
 
 
-define ('URL', 'http://localhost/Vibernets-Academy/');
+define ('URL', 'http://localhost/Vibernets-Academy-System/');
 define ('LIBS', 'libs/');
 
 define ('DB_TYPE','mysql');
