@@ -9,6 +9,7 @@
 
 ?>
 
+<div>
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
@@ -157,6 +158,7 @@
             </form>
         </div>
     </div>
+</div>
 </div>
 </body>
 <!-- plugins:js -->
