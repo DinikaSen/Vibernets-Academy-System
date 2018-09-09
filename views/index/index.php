@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Purple Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="<?php echo URL?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="<?php echo URL?>public/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="<?php echo URL?>public/css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo URL?>public/images/favicon.png" />
-</head>
-<body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
 
@@ -57,7 +40,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/mdi.html">
+            <a class="nav-link" href="addStudent/index">
               <span class="menu-title">Online Admission</span>
               <i class="mdi mdi-contacts menu-icon"></i>
             </a>
