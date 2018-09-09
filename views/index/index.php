@@ -98,7 +98,7 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12" style="padding-top: 50px">
               <span class="d-flex align-items-center purchase-popup">
                   <img src="<?php echo URL?>public/images/logo.png" alt="logo" style="padding-right: 50px; padding-left: 80px"/>
                     <h3 style=" color: #ff394a; text-shadow: 1px 1px black" align="center" >We aim on making a Network specialist...</h3>
@@ -125,7 +125,7 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-danger card-img-holder text-white">
                 <div class="card-body">
-                  <img src="<?php echo URL?>public/images/dashboard/students.png" class="card-img-absolute" alt="circle-image"/>
+                  <img src="<?php echo URL?>public/images/dashboard/students.png" class="card-img-absolute" alt="circle-image" style="position: absolute; right:0"/>
                   <h4 class="font-weight-normal mb-3">Weekly Sales
                     <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                   </h4>
