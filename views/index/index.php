@@ -108,7 +108,6 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-danger card-img-holder text-white">
                 <div class="card-body">
-                  <img src="<?php echo URL?>public/images/dashboard/students.png" class="card-img-absolute" alt="circle-image" style="position: absolute; right:0"/>
                   <h4 class="font-weight-normal mb-3">Weekly Sales
                     <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                   </h4>
@@ -120,7 +119,6 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-info card-img-holder text-white">
                 <div class="card-body">
-                  <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                  
                   <h4 class="font-weight-normal mb-3">Weekly Orders
                     <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                   </h4>
@@ -132,7 +130,6 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-success card-img-holder text-white">
                 <div class="card-body">
-                  <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                                    
                   <h4 class="font-weight-normal mb-3">Visitors Online
                     <i class="mdi mdi-diamond mdi-24px float-right"></i>
                   </h4>

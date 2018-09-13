@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo URL?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo URL?>public/vendors/css/vendor.bundle.base.css">
@@ -13,7 +13,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="<?php echo URL?>public/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="<?php echo URL?>public/images/favicon.png" />
+    <link rel="shortcut icon" href="<?php echo URL?>public/images/logo.png" />
 </head>
 <body>
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">

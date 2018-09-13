@@ -17292,11 +17292,11 @@ input:focus {
 }
 
 .bg-gradient-success {
-  background: linear-gradient(to right, #84d9d2, #07cdae);
+  background-image: url("../images/dashboard/batches.png");
 }
 
 .bg-gradient-info {
-  background: linear-gradient(to right, #90caf9, #047edf 99%);
+  background-image: url("../images/dashboard/gradcap.png");
 }
 
 .bg-gradient-warning {
@@ -17304,7 +17304,7 @@ input:focus {
 }
 
 .bg-gradient-danger {
-  background: linear-gradient(to right, #ffbf96, #fe7096);
+  background-image: url("../images/dashboard/students.png");
 }
 
 .bg-gradient-light {
