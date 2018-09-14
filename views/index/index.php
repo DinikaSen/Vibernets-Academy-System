@@ -11,7 +11,7 @@
             <a href="#" class="nav-link">
               <div class="nav-profile-image">
                 <img src="<?php echo URL ?>public/images/faces/face1.jpg" alt="profile">
-                <span class="login-status online"></span> <!--change to offline or busy as needed-->              
+                <span class="login-status online"></span> <!--change to offline or busy as needed-->
               </div>
               <div class="nav-profile-text d-flex flex-column">
                 <span class="font-weight-bold mb-2">David Grey. H</span>
@@ -30,7 +30,7 @@
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-title">Courses</span>
               <i class="menu-arrow"></i>
-              <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+              <i class="mdi mdi-book-open-page-variant menu-icon"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
@@ -42,19 +42,19 @@
           <li class="nav-item">
             <a class="nav-link" href="addStudent/index">
               <span class="menu-title">Online Admission</span>
-              <i class="mdi mdi-contacts menu-icon"></i>
+              <i class="mdi mdi-account-card-details menu-icon"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">
               <span class="menu-title">Student Attendance</span>
-              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              <i class="mdi mdi-account-multiple menu-icon"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <span class="menu-title">Student Payments</span>
-              <i class="mdi mdi-chart-bar menu-icon"></i>
+              <i class="mdi mdi-currency-usd menu-icon"></i>
             </a>
           </li>
 
@@ -95,46 +95,47 @@
               </span>
               Dashboard
             </h3>
-            <nav aria-label="breadcrumb">
-              <ul class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">
-                  <span></span>Overview
-                  <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                </li>
-              </ul>
-            </nav>
           </div>
           <div class="row">
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-danger card-img-holder text-white">
                 <div class="card-body">
-                  <h4 class="font-weight-normal mb-3">Weekly Sales
-                    <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-                  </h4>
-                  <h2 class="mb-5">$ 15,0000</h2>
-                  <h6 class="card-text">Increased by 60%</h6>
+                  <h2 class="font-weight-normal mb-3">12
+                    <i class="mdi mdi-account-multiple mdi-24px float-right"></i>
+                  </h2>
+                  <h3 class="mb-4">Students</h3>
+                    <a class="nav-link" href="..">
+                        <span class="menu-title text-white">More info</span>
+                        <i class="mdi mdi-alert-circle-outline align-middle"></i>
+                    </a>
                 </div>
               </div>
             </div>
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-info card-img-holder text-white">
                 <div class="card-body">
-                  <h4 class="font-weight-normal mb-3">Weekly Orders
-                    <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
-                  </h4>
-                  <h2 class="mb-5">45,6334</h2>
-                  <h6 class="card-text">Decreased by 10%</h6>
+                  <h2 class="font-weight-normal mb-3">2
+                    <i class="mdi mdi-book-open-page-variant mdi-24px float-right"></i>
+                  </h2>
+                  <h3 class="mb-4"> Active Courses</h3>
+                    <a class="nav-link" href="..">
+                        <span class="menu-title text-white">More info</span>
+                        <i class="mdi mdi-alert-circle-outline align-middle"></i>
+                    </a>
                 </div>
               </div>
             </div>
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-success card-img-holder text-white">
                 <div class="card-body">
-                  <h4 class="font-weight-normal mb-3">Visitors Online
-                    <i class="mdi mdi-diamond mdi-24px float-right"></i>
-                  </h4>
-                  <h2 class="mb-5">95,5741</h2>
-                  <h6 class="card-text">Increased by 5%</h6>
+                  <h2 class="font-weight-normal mb-3">3
+                    <i class="mdi mdi-google-circles-extended mdi-24px float-right"></i>
+                  </h2>
+                  <h3 class="mb-4">Active Batches</h3>
+                    <a class="nav-link" href="..">
+                        <span class="menu-title text-white">More info</span>
+                        <i class="mdi mdi-alert-circle-outline align-middle text"></i>
+                    </a>
                 </div>
               </div>
             </div>

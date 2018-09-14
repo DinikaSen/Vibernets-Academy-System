@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vibernets Academy</title>
     
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo URL?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
@@ -16,10 +17,11 @@
     <link rel="shortcut icon" href="<?php echo URL?>public/images/logo.png" />
 </head>
 <body>
+<div class="container-scroller">
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.php"><img src="<?php echo URL?>public/images/logo.png" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="<?php echo URL?>public/images/logo.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="<?php echo URL?>index.php"><img src="<?php echo URL?>public/images/logo.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="<?php echo URL?>index.php"><img src="<?php echo URL?>public/images/logo.png" alt="logo"/></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <div class="search-field d-none d-md-block">
@@ -40,7 +42,7 @@
                         <span class="availability-status online"></span>
                     </div>
                     <div class="nav-profile-text">
-                        <p class="mb-1 text-black">David Greymaax</p>
+                        <p class="mb-1 text-black">Wenura Mendis</p>
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
