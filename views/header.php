@@ -196,7 +196,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
+                    <a class="nav-link" href="<?php echo URL?>index.php">
                         <span class="menu-title">Dashboard</span>
                         <i class="mdi mdi-home menu-icon"></i>
                     </a>
@@ -215,19 +215,19 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="addStudent/index">
+                    <a class="nav-link" href="<?php echo URL?>addStudent/index">
                         <span class="menu-title">Online Admission</span>
                         <i class="mdi mdi-account-card-details menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/forms/basic_elements.html">
+                    <a class="nav-link" href="<?php echo URL?>login/index">
                         <span class="menu-title">Student Attendance</span>
                         <i class="mdi mdi-account-multiple menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/chartjs.html">
+                    <a class="nav-link" href="<?php echo URL?>views/">
                         <span class="menu-title">Student Payments</span>
                         <i class="mdi mdi-currency-usd menu-icon"></i>
                     </a>
@@ -252,16 +252,3 @@
                 </li>
             </ul>
         </nav>
-        <!-- plugins:js -->
-        <script src="vendors/js/vendor.bundle.base.js"></script>
-        <script src="vendors/js/vendor.bundle.addons.js"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page-->
-        <!-- End plugin js for this page-->
-        <!-- inject:js -->
-        <script src="js/off-canvas.js"></script>
-        <script src="js/misc.js"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page-->
-        <script src="js/dashboard.js"></script>
-        <!-- End custom js for this page-->
