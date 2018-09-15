@@ -9,29 +9,70 @@
 
 ?>
 
-<div>
+
+<div class="content-wrapper">
+    <div class="row">
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Horizontal Two column</h4>
-            <form class="form-sample">
+            <h4 class="card-title">Online Registration</h4>
+            <form class="form-sample" id="student_reg" action="<?php echo URL;?>addStudent/addNewStudent" method="post">
                 <p class="card-description">
-                    Personal info
+                    Personal information
                 </p>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">First Name</label>
+                            <label class="col-sm-3 col-form-label">Student ID</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="student_id" type="text" class="form-control" readonly required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">NIC</label>
+                            <div class="col-sm-9">
+                                <input name="NIC" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Title</label>
+                            <div class="col-sm-9">
+                                <select name="title"class="form-control">
+                                    <option value="Mr.">Mr.</option>
+                                    <option vaule="MRs.">Mrs.</option>
+                                    <option value="Miss.">Miss.</option>
+                                    <option value="Rev.">Rev.</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">First Name</label>
+                            <div class="col-sm-9">
+                                <input name="first_name" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Middle Name</label>
+                            <div class="col-sm-9">
+                                <input name="middle_name" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Last Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="last_name" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -41,9 +82,9 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Gender</label>
                             <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>Male</option>
-                                    <option>Female</option>
+                                <select name="gender" class="form-control">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
                             </div>
                         </div>
@@ -52,105 +93,75 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date of Birth</label>
                             <div class="col-sm-9">
-                                <input class="form-control" placeholder="dd/mm/yyyy"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Category</label>
-                            <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>Category1</option>
-                                    <option>Category2</option>
-                                    <option>Category3</option>
-                                    <option>Category4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Membership</label>
-                            <div class="col-sm-4">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
-                                        Free
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
-                                        Professional
-                                    </label>
-                                </div>
+                                <input name="dob" class="form-control" placeholder="dd/mm/yyyy"/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <p class="card-description">
-                    Address
+                    Contact Details
+                </p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mobile</label>
+                            <div class="col-sm-9">
+                                <input name="mobile" type="text" class="form-control" pattern="[0-9]{10}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Land phone</label>
+                            <div class="col-sm-9">
+                                <input name="land_phone" type="text" class="form-control" pattern="[0-9]{10}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input name="email" type="text" class="form-control" pattern=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Address</label>
+                            <div class="col-sm-9">
+                                <input name="address" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">District</label>
+                            <div class="col-sm-9">
+                                <input name="district" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Professional Details
                 </p>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 1</label>
+                            <label class="col-sm-3 col-form-label">Work Place</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input name="work_place" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">State</label>
+                            <label class="col-sm-3 col-form-label">Designation</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 2</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Postcode</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">City</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Country</label>
-                            <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>America</option>
-                                    <option>Italy</option>
-                                    <option>Russia</option>
-                                    <option>Britain</option>
-                                </select>
+                                <input name="designation" type="text" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -160,6 +171,8 @@
     </div>
 </div>
 </div>
+</div>
+
 </body>
 <!-- plugins:js -->
 <script src="<?php echo URL?>publicvendors/js/vendor.bundle.base.js"></script>
