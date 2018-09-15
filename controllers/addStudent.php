@@ -19,10 +19,10 @@ class addStudent extends Controller
         $this->view->render('addStudent/index');
     }
 
-    function addNewStudent(){
+    /*function addNewStudent(){
         $this->modle->addNewStudent();
         $this->index();
 
-    }
+    }*/
 
 }
