@@ -40,15 +40,15 @@
               </div>
               <h4 style="padding-bottom: 20px">Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form class="pt-3">
+              <form class="pt-3" action="loginDo" method="post">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" autofocus>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" autofocus>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-gradient-danger btn-lg font-weight-medium auth-form-btn" href="../adminHome/index">SIGN IN</a>
+                    <button class="btn btn-block btn-gradient-danger btn-lg font-weight-medium auth-form-btn" type="submit">SIGN IN</button>
                 </div>
                   <div class="text-center mt-4 font-weight-light">
                   Forgot password? <a href="register.html" class="text-primary">Get help</a>

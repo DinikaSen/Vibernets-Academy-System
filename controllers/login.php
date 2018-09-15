@@ -19,4 +19,15 @@ class login extends Controller
         $this->view->render('login/index',true);
     }
 
+    function loginDo()
+    {
+        $this->model->loginDo();
+    }
+
+    function logout(){
+        Session::set("loggedIn","false");
+        //Session::destroy();
+        header('Location:'.URL.'index.php');
+    }
+
 }

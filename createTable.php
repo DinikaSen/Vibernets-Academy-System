@@ -28,6 +28,34 @@ if(! $retval ) {
 }
 echo "Table student created successfully\n";
 
+# Admin table
+# adminone : a2a63fc5929ce057ce5f6051343245a4
+# admintwo : ac0fdab61cb32ec48f9c02ed6d14ad8f
+$sql="create table if not exists admin
+(admin_ID 	varchar(20),
+    full_name	varchar(255) not null,
+	primary key(admin_ID))";
+$retval = mysqli_query(  $connection, $sql );
+if(! $retval ) {
+    die('Could not create table admin: ');
+}
+echo "Table admin created successfully\n";
+
+# Login table
+$sql="Create table if not exists login
+(username		varchar(100),
+	 pwd			varchar(250) not null,
+	u_ID 			varchar(20),
+	user_type   varchar(20),
+	user_status  varchar(20),
+	primary key(username))";
+$retval = mysqli_query(  $connection, $sql );
+if(! $retval ) {
+    die('Could not create table login: ');
+}
+echo "Table login created successfully\n";
+
+
 # Course table
 $sql="create table if not exists course
 (course_ID varchar(30),
