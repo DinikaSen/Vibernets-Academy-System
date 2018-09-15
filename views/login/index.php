@@ -48,7 +48,7 @@
                   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-gradient-danger btn-lg font-weight-medium auth-form-btn" href="../adminHome/index">SIGN IN</a>
+                  <a class="btn btn-block btn-gradient-danger btn-lg font-weight-medium auth-form-btn" href="<?php echo URL?>adminHome/index">SIGN IN</a>
                 </div>
                   <div class="text-center mt-4 font-weight-light">
                   Forgot password? <a href="register.html" class="text-primary">Get help</a>

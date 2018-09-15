@@ -6,7 +6,7 @@
  * Date: 9/14/2018
  * Time: 9:51 PM
  */
-class addStudent_model extends Modle
+class addStudent_model extends Model
 {
     function __construct()
     {
