@@ -25,4 +25,8 @@ class addStudent extends Controller
 
     }
 
+    function getNextID(){
+        $this->modle->getNextID();
+    }
+
 }

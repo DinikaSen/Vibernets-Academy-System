@@ -8,10 +8,20 @@
  */
 class addStudent_model extends Model
 {
-    function __construct()
+    function __construct($user_type)
     {
+        parent::__construct($user_type);
     }
 
+    /*function getNextID(){
+        $sql = SHOW TABLE STATUS LIKE 'student';
+        if(!$result = $this->db->query($sql)){
+            die('There was an error running the query [' . $this->db->error . ']');
+        }
+        $row = $result->fetch_assoc();
+        echo $row['Auto_increment'];
+
+    }*/
     function addNewStudent()
     {
         try {
@@ -31,7 +41,7 @@ class addStudent_model extends Model
             $work_place = $_POST['work_place'];
             $designation = $_POST['designation'];
 
-            $studentData = array('std_ID'=>$student_ID,
+            $studentData = array(
                 'title'=>$title,
                 'first_name'=>$first_name,
                 'mid_name'=>$middle_name,
