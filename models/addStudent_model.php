@@ -8,20 +8,18 @@
  */
 class addStudent_model extends Model
 {
-    function __construct($user_type)
+    function __construct()
     {
-        parent::__construct($user_type);
+        parent::__construct();
     }
 
-    /*function getNextID(){
-        $sql = SHOW TABLE STATUS LIKE 'student';
-        if(!$result = $this->db->query($sql)){
-            die('There was an error running the query [' . $this->db->error . ']');
-        }
-        $row = $result->fetch_assoc();
-        echo $row['Auto_increment'];
-
-    }*/
+    function getNextID(){
+        $stmt = $this->db->prepare("SELECT std_ID FROM student");
+        $stmt->execute();
+        $row = $stmt->rowCount();
+        echo $row+1;
+        return $row+1;
+    }
     function addNewStudent()
     {
         try {
@@ -42,6 +40,7 @@ class addStudent_model extends Model
             $designation = $_POST['designation'];
 
             $studentData = array(
+                'std_ID'=>$student_ID,
                 'title'=>$title,
                 'first_name'=>$first_name,
                 'mid_name'=>$middle_name,
@@ -50,19 +49,19 @@ class addStudent_model extends Model
                 'DoB'=> $dob,
                 'NIC' => $nic,
                 'address'=>$address,
-                'distric' => $district,
+                'district' => $district,
                 'mobile' => $mobile,
                 'land_phone' => $land_phone,
                 'email' => $email,
                 'workplace' =>$work_place,
                 'designation' => $designation
                 );
-
             $this->db->beginTransaction();
             $this->db->insert('student',$studentData);
-
-
-        } catch (Exception $e) {
+            $this->db->commit();
+        }
+        catch (Exception $e) {
+            echo $e;
             $this->db->rollback();
         }
     }

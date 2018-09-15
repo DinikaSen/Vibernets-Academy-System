@@ -1,0 +1,4 @@
+INSERT INTO `admin` (`admin_ID`, `full_name`) VALUES ('1', 'Wenura Mendis'), ('2', 'Dinika Senarath');
+
+INSERT INTO `login` (`username`, `pwd`, `u_ID`, `user_type`, `user_status`) VALUES ('adminone', 'a2a63fc5929ce057ce5f6051343245a4', '1', 'admin', 'active'), ('admintwo', 'ac0fdab61cb32ec48f9c02ed6d14ad8f', '2', 'admin', 'restricted');
+

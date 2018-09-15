@@ -15,7 +15,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">ID</label>
                                     <div class="col-sm-9">
-                                        <input name="student_id" type="text" class="form-control" readonly required/>
+                                        <input name="student_id" type="text" class="form-control" value="<?php echo $this->getStudentID; ?>" readonly required/>
                                     </div>
                                 </div>
                             </div>

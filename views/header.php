@@ -51,9 +51,9 @@
                             Activity Log
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="<?php echo URL?>login/logout" >
                             <i class="mdi mdi-logout mr-2 text-primary"></i>
-                            Signout
+                            Sign Out
                         </a>
                     </div>
                 </li>
@@ -162,8 +162,8 @@
                         <h6 class="p-3 mb-0 text-center">See all notifications</h6>
                     </div>
                 </li>
-                <li class="nav-item nav-logout d-none d-lg-block">
-                    <a class="nav-link" href="#">
+                <li class="nav-item nav-logout d-none d-lg-block" >
+                    <a class="nav-link" href="<?php echo URL?>login/logout" >
                         <i class="mdi mdi-power"></i>
                     </a>
                 </li>
@@ -252,3 +252,4 @@
                 </li>
             </ul>
         </nav>
+
