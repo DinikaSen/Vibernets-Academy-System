@@ -44,10 +44,15 @@
                             echo '<td>'.$row['course_name'].'</td>';
                             echo '<td>'.'LKR. '.$row['coursefee'].'.00'.'</td>';
                             echo '<td>'.$row['deadline'].'</td>';
-                            if($row['deadline']<date("Y-m-d")){
-                                echo '<td><label class="badge badge-success">Completed</label></td>';
-                            }else{
-                                echo '<td><label class="badge badge-warning">In progress</label></td>';
+                            if($row['deadline']!=null) {
+                                if ($row['deadline'] < date("Y-m-d")) {
+                                    echo '<td><label class="badge badge-success">Completed</label></td>';
+                                } else {
+                                    echo '<td><label class="badge badge-warning">In progress</label></td>';
+                                }
+                            }
+                            else{
+                                echo '<td></td>';
                             }
 
                             echo '</tr>';
