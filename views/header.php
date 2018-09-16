@@ -212,7 +212,7 @@
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">View Courses</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="<?php echo URL?>viewCourse/index">View Courses</a></li>
                             <li class="nav-item"> <a class="nav-link" href="<?php echo URL?>addCourse/index">Add New Course</a></li>
                         </ul>
                     </div>

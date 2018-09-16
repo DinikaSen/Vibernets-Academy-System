@@ -2,3 +2,9 @@ INSERT INTO `admin` (`admin_ID`, `full_name`) VALUES ('1', 'Wenura Mendis'), ('2
 
 INSERT INTO `login` (`username`, `pwd`, `u_ID`, `user_type`, `user_status`) VALUES ('adminone', 'a2a63fc5929ce057ce5f6051343245a4', '1', 'admin', 'active'), ('admintwo', 'ac0fdab61cb32ec48f9c02ed6d14ad8f', '2', 'admin', 'restricted');
 
+INSERT INTO `course` (`course_ID`, `course_name`, `coursefee`, `deadline`) VALUES ('NA125', 'CCNA Routing and Switching', '20000','2010-02-03'),
+('NP101', 'CCNP Route', '30000','2010-04-03'),
+('NP115', 'CCNP Switch', '45000','2020-02-03'),
+('NP135', 'CCNP TShoot', '45000','2010-02-03'),
+('NA260', 'CCNA Security', '45000','2050-02-03')
+;
