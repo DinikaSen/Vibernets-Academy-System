@@ -17,8 +17,8 @@ class addStudent_model extends Model
         $stmt = $this->db->prepare("SELECT std_ID FROM student");
         $stmt->execute();
         $row = $stmt->rowCount();
-        echo $row+1;
-        return $row+1;
+        echo $row+1000;
+        return $row+1000;
     }
     function addNewStudent()
     {

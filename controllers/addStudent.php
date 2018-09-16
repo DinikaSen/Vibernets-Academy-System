@@ -17,7 +17,6 @@ class addStudent extends Controller
     function index()
     {
         $this->view->getStudentID = $this->model->getNextID();
-        console.log($this->model->getNextID());
         $this->view->render('addStudent/index');
     }
 

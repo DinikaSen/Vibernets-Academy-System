@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Online Admission</h4>
                     <form class="form-sample" id="student_reg" action="<?php echo URL; ?>addStudent/addNewStudent"
-                          method="post">
+                          method="post" onsubmit="return validate()">
                         <p class="card-description">
                             Personal information
                         </p>
@@ -46,7 +46,9 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">First Name</label>
                                     <div class="col-sm-9">
-                                        <input name="first_name" type="text" class="form-control"/>
+                                        <input name="first_name" type="text" class="form-control" required="required"
+                                               data-error="Firstname is required."/>
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +85,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Date of Birth</label>
                                     <div class="col-sm-9">
-                                        <input name="dob" class="form-control" placeholder="dd/mm/yyyy"/>
+                                        <input name="dob" type="date" class="form-control" placeholder="dd/mm/yyyy" required/>
                                     </div>
                                 </div>
                             </div>
@@ -206,6 +208,74 @@
 <!-- Custom js for this page-->
 <script src="<?php echo URL ?>public/js/dashboard.js"></script>
 <!-- End custom js for this page-->
+<script src="<?php echo URL?>public/js/sweetAlert.js"></script>
+<script src="<?php echo URL?>public/js/bootbox.min.js"></script>
+<script>
+    $(function() {
+        // init the validator
+        // validator files are included in the download package
+        // otherwise download from http://1000hz.github.io/bootstrap-validator
+
+        $("#student_reg").validator();
+
+        // when the form is submitted
+        $("#student_reg").on("submit", function(e) {
+            // if the validator does not prevent form submit
+            if (!e.isDefaultPrevented()) {
+                var url = "<?php echo URL; ?>addStudent/addNewStudent";
+
+                // FOR CODEPEN DEMO I WILL PROVIDE THE DEMO OUTPUT HERE, download the PHP files from
+                // https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form
+
+                var messageAlert = "alert-success";
+                var messageText =
+                    "Your message was sent, thank you. I will get back to you soon.";
+
+                // let's compose Bootstrap alert box HTML
+                var alertBox =
+                    '<div class="alert ' +
+                    messageAlert +
+                    ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+                    messageText +
+                    "</div>";
+
+                // If we have messageAlert and messageText
+                if (messageAlert && messageText) {
+                    // inject the alert to .messages div in our form
+                    $("#student_reg").find(".messages").html(alertBox);
+                    // empty the form
+                    $("#student_reg")[0].reset();
+                }
+
+                return false;
+            }
+        });
+    });
+
+    function validate(){
+        var firstName = document.getElementById("first_name").value;
+        var dob = document.getElementById("dob").value;
+        if (firstName == ''){
+            alert("First name is require");
+            //location.href = '#';
+            return false;
+
+        }
+        else if (dob == ''){
+            alert("Date of Birth is required");
+            return false;
+
+        }
+        else{
+            $("#student_reg").submit();
+            return true;
+        }
+    }
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+</script>
 </body>
 
 </html>
