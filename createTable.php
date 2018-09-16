@@ -61,6 +61,7 @@ $sql="create table if not exists course
 (course_ID varchar(30),
     course_name varchar(200),
     coursefee float,
+    deadline date,
 	primary key(course_ID))";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
