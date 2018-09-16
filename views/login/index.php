@@ -42,10 +42,10 @@
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3" action="loginDo" method="post">
                 <div class="form-group">
-                  <input name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" autofocus>
+                  <input name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required autofocus>
                 </div>
                 <div class="form-group">
-                  <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" autofocus>
+                  <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" required placeholder="Password" autofocus>
                 </div>
                 <div class="mt-3">
                     <button class="btn btn-block btn-gradient-danger btn-lg font-weight-medium auth-form-btn" type="submit">SIGN IN</button>

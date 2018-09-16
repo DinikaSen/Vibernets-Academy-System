@@ -13,7 +13,7 @@ class Login_Model extends Model
     private $pwd;
     private $user_type;
     private $user_status;
-
+    private $name;
 
     public function __construct()
     {
@@ -47,13 +47,15 @@ class Login_Model extends Model
                     $stmt = $this->db->prepare("SELECT first_name FROM student WHERE std_ID = :user_id");
                     $stmt->execute(array(':user_id' => $this->user_id));
                     $result = $stmt->fetch();
-                    $_SESSION['name']=$result['name'];
+                    $this->name = $result['first_name'];
+                    Session::set('name',$this->name);
                     header('location: ../studentHome');
                 } else if ($_SESSION['user_type'] == 'admin' ) {
                     $stmt = $this->db->prepare("SELECT full_name FROM admin WHERE admin_ID = :user_id");
                     $stmt->execute(array(':user_id' => $this->user_id));
                     $result = $stmt->fetch();
-                    $_SESSION['name']=$result['name'];
+                    $this->name = $result['full_name'];
+                    Session::set('name',$this->name);
                     header('location: ../adminHome');
                 }
             } else {
