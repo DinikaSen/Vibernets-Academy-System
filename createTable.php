@@ -4,7 +4,7 @@ mysqli_select_db($connection,'VIBERNETS_DB')or die("Error occurred");
 
 # Student table
 $sql="create table if not exists student
-(std_ID 	varchar(20),
+(std_ID 	int,
     title varchar(20) not null,
 	first_name	varchar(50) not null,
 	mid_name	varchar(50),
@@ -85,7 +85,7 @@ echo "Table batch created successfully\n";
 
 # Take table
 $sql="create table if not exists take
-(   std_ID varchar(20),
+(   std_ID int,
     course_ID varchar(30),
     batch_No varchar(30),
     fee float,
@@ -104,7 +104,7 @@ echo "Table take created successfully\n";
 
 # Payment table
 $sql="create table if not exists payment
-(   std_ID varchar(20),
+(   std_ID int,
     course_ID varchar(30),
     batch_No varchar(30),
     amount float not null,
@@ -124,7 +124,7 @@ echo "Table payment created successfully\n";
 
 # Attendance table
 $sql="create table if not exists attendance
-(   std_ID varchar(20),
+(   std_ID int,
     course_ID varchar(30),
     batch_No varchar(30),
     class_date date,

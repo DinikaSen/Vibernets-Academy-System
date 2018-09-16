@@ -5,32 +5,32 @@
  * Date: 15-Sep-18
  * Time: 12:24 AM
  */
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Vibernets Academy</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="<?php echo URL?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="<?php echo URL?>public/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="<?php echo URL?>public/css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo URL?>public/images/favicon.png" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vibernets Academy</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="<?php echo URL?>public/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="<?php echo URL?>public/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="<?php echo URL?>public/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="<?php echo URL?>public/images/favicon.png" />
 </head>
 
 <body>
-  <div class="container-scroller">
+<div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
+<<<<<<< HEAD
       <div class="content-wrapper d-flex align-items-center auth">
         <div class="row w-100">
           <div class="col-lg-4 mx-auto">
@@ -53,24 +53,22 @@
                   <div class="text-center mt-4 font-weight-light">
                   Forgot password? <a href="register.html" class="text-primary">Get help</a>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- content-wrapper ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="<?php echo URL?>public/vendors/js/vendor.bundle.base.js"></script>
-  <script src="<?php echo URL?>public/vendors/js/vendor.bundle.addons.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="<?php echo URL?>public/js/off-canvas.js"></script>
-  <script src="<?php echo URL?>public/js/misc.js"></script>
-  <!-- endinject -->
+    <!-- content-wrapper ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="<?php echo URL?>public/vendors/js/vendor.bundle.base.js"></script>
+<script src="<?php echo URL?>public/vendors/js/vendor.bundle.addons.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="<?php echo URL?>public/js/off-canvas.js"></script>
+<script src="<?php echo URL?>public/js/misc.js"></script>
+<!-- endinject -->
 </body>
 
 </html>

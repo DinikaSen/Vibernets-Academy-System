@@ -6,12 +6,20 @@
  * Date: 9/14/2018
  * Time: 9:51 PM
  */
-class addStudent_model extends Modle
+class addStudent_model extends Model
 {
     function __construct()
     {
+        parent::__construct();
     }
 
+    function getNextID(){
+        $stmt = $this->db->prepare("SELECT std_ID FROM student");
+        $stmt->execute();
+        $row = $stmt->rowCount();
+        echo $row+1000;
+        return $row+1000;
+    }
     function addNewStudent()
     {
         try {
@@ -31,7 +39,8 @@ class addStudent_model extends Modle
             $work_place = $_POST['work_place'];
             $designation = $_POST['designation'];
 
-            $studentData = array('std_ID'=>$student_ID,
+            $studentData = array(
+                'std_ID'=>$student_ID,
                 'title'=>$title,
                 'first_name'=>$first_name,
                 'mid_name'=>$middle_name,
@@ -40,19 +49,19 @@ class addStudent_model extends Modle
                 'DoB'=> $dob,
                 'NIC' => $nic,
                 'address'=>$address,
-                'distric' => $district,
+                'district' => $district,
                 'mobile' => $mobile,
                 'land_phone' => $land_phone,
                 'email' => $email,
                 'workplace' =>$work_place,
                 'designation' => $designation
                 );
-
             $this->db->beginTransaction();
             $this->db->insert('student',$studentData);
-
-
-        } catch (Exception $e) {
+            $this->db->commit();
+        }
+        catch (Exception $e) {
+            echo $e;
             $this->db->rollback();
         }
     }

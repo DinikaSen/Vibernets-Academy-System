@@ -18,6 +18,9 @@ $adminName = Session::get('name')?>
     <link rel="stylesheet" href="<?php echo URL?>public/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo URL?>public/images/logo.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="<?php echo URL?>public/js/sweetAlert.js"></script>
+    <script src="<?php echo URL?>public/js/bootbox.min.js"></script>
 </head>
 <body>
 <div class="container-scroller">
@@ -214,7 +217,7 @@ $adminName = Session::get('name')?>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">View Courses</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Add New Course</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="<?php echo URL?>addCourse/index">Add New Course</a></li>
                         </ul>
                     </div>
                 </li>
