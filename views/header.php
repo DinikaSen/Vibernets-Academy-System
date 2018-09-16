@@ -209,7 +209,7 @@ $adminName = Session::get('name')?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>addStudent/index">
+                    <a class="nav-link" href="<?php echo URL?>viewCourse/index">
                         <span class="menu-title">View Courses</span>
                         <i class="mdi mdi-book-open-page-variant menu-icon"></i>
                     </a>
