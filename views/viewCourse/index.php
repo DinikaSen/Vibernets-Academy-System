@@ -39,7 +39,7 @@
                         <tbody>
                         <?php
                         foreach ($this->courses as $row){
-                            echo '<tr>';
+                            echo '<tr  class="clickable-row" data-href="editCourse/'.$row['course_ID'].'"">';
                             echo '<td class="py-1">'.$row['course_ID'].'</td>';
                             echo '<td>'.$row['course_name'].'</td>';
                             echo '<td>'.'LKR. '.$row['coursefee'].'.00'.'</td>';
@@ -58,5 +58,14 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>

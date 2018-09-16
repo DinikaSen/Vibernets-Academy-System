@@ -18,5 +18,14 @@ class viewCourse extends Controller
         $this->view->courses= $this->model->getCourseDetails();
         $this->view->render('viewCourse/index');
     }
+    function editCourse($courseID){
+        $this->view->courseDetail = $this->model->getStoredDetails($courseID);
+        $this->view->render('viewCourse/edit');
+    }
+    function updateCourse(){
+        $this->model->updateCourse();
+        $this->index();
+
+    }
 
 }
