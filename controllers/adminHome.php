@@ -14,9 +14,10 @@ class adminHome extends Controller
         parent::__construct();
         Session::init();
         $loggedIn = Session::get('loggedIn');
-        echo $loggedIn;
+        $adminName = Session::get('name');
         if($loggedIn == "true"){
             $this->view->render('adminHome/index');
+            $this->view->adminName = $adminName;
         }
         else{
             Session::destroy();
