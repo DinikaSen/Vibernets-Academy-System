@@ -203,23 +203,22 @@ $adminName = Session::get('name')?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>index.php">
+                    <a class="nav-link" href="<?php echo URL?>adminHome">
                         <span class="menu-title">Dashboard</span>
                         <i class="mdi mdi-home menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                        <span class="menu-title">Courses</span>
-                        <i class="menu-arrow"></i>
+                    <a class="nav-link" href="<?php echo URL?>addStudent/index">
+                        <span class="menu-title">View Courses</span>
                         <i class="mdi mdi-book-open-page-variant menu-icon"></i>
                     </a>
-                    <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">View Courses</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="<?php echo URL?>addCourse/index">Add New Course</a></li>
-                        </ul>
-                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL?>addCourse/index">
+                        <span class="menu-title">Add New Course</span>
+                        <i class="mdi mdi-loupe menu-icon"></i>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL?>addStudent/index">
@@ -239,6 +238,25 @@ $adminName = Session::get('name')?>
                         <i class="mdi mdi-currency-usd menu-icon"></i>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL?>login/index">
+                        <span class="menu-title">Add Students to batches</span>
+                        <i class="mdi mdi-account-plus menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL?>views/">
+                        <span class="menu-title">Add New Batch</span>
+                        <i class="mdi mdi-account-multiple-plus menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL?>views/">
+                        <span class="menu-title">View Batches</span>
+                        <i class="mdi mdi-google-circles-extended menu-icon"></i>
+                    </a>
+                </li>
+
 
                 <li class="nav-item sidebar-actions">
             <span class="nav-link">
