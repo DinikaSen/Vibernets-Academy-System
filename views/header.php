@@ -233,7 +233,7 @@ $adminName = Session::get('name')?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>views/">
+                    <a class="nav-link" href="<?php echo URL?>payment/index">
                         <span class="menu-title">Student Payments</span>
                         <i class="mdi mdi-currency-usd menu-icon"></i>
                     </a>

@@ -8,3 +8,10 @@ INSERT INTO `course` (`course_ID`, `course_name`, `coursefee`, `deadline`) VALUE
 ('NP135', 'CCNP TShoot', '45000','2010-02-03'),
 ('NA260', 'CCNA Security', '45000','2050-02-03')
 ;
+
+INSERT INTO `batch` (`batch_No`, `course_ID`, `start_date`, `end_date`) VALUES ('BM-20180901', 'NA125', '2018-09-01', '2019-01-31'), ('BE-20180915', 'NA125', '2018-09-15', '2019-02-15');
+
+INSERT INTO `take` (`std_ID`, `course_ID`, `batch_No`, `fee`) VALUES ('1000', 'NA125', 'BM-20180901', '20000');
+
+INSERT INTO `payment` (`std_ID`, `course_ID`, `batch_No`, `amount`, `payed_date`) VALUES ('1000', 'NA125', 'BM-20180901', '5000', '2018-09-15');
+
