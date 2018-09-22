@@ -14,6 +14,7 @@ class Error extends Controller
 
     }
     function index(){
+
         $this->view-> render('error/index');
     }
 }
