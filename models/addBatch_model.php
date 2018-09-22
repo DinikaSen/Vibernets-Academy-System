@@ -13,7 +13,7 @@ class addBatch_model extends Model
         parent::__construct();
     }
     function getCourseCodes(){
-        $stmt= $this->db->prepare("SELECT course_ID FROM course");
+        $stmt= $this->db->prepare("SELECT course_ID,deadline FROM course");
         $stmt->execute();
         return $stmt->fetchAll();
     }

@@ -51,14 +51,14 @@
                         <tbody>
                         <?php
                         foreach ($this->batches as $row){
-                            echo '<tr>';
+                            echo '<tr  class="clickable-row" data-href="editBatch/'.$row['course_ID'].','.$row['batch_No'].'"">';
                             echo '<td class="py-1">'.$row['course_ID'].'</td>';
                             echo '<td>'.$row['batch_No'].'</td>';
                             echo '<td>'.$row['student_count'].'</td>';
                             echo '<td>'.$row['start_date'].'</td>';
                             echo '<td>'.$row['end_date'].'</td>';
 
-                            if($row['end_date']!=null) {
+                            if($row['end_date']!='0000-00-00') {
                                 if ($row['end_date'] < date("Y-m-d")) {
                                     echo '<td><label class="badge badge-success">Completed</label></td>';
                                 } else {

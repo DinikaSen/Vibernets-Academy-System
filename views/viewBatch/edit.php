@@ -13,8 +13,11 @@
                 <div class="card-body">
                     <h4 class="card-title">Batch Details</h4>
                     <form class="form-sample"  method="post" id="batch_reg"
-                          action="<?php echo URL; ?>addBatch/addNewBatch">
-
+                          action="<?php echo URL; ?>viewBatch/updateBatch">
+                        <?php
+                        foreach($this-> batchDetails as $row){
+                        }
+                        ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -24,14 +27,8 @@
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <select name="course_code" class="form-control">
-                                                    <?php
-                                                    foreach ($this->courseCodes as $row){
-                                                    if ($row['deadline']== null or !($row['deadline'] < date("Y-m-d"))) {
-                                                        echo '<option value='.$row['course_ID'].'>'.$row['course_ID'].'</option>';
-                                                    }
-                                                    }?>
-                                                </select>
+                                                <input name="course_code" type="text" class="form-control" placeholder="Course Code"
+                                                       value="<?php echo $row['course_ID']; ?>" aria-label="Course Code" aria-describedby="basic-addon1" readonly/>
                                             </div>
                                         </div>
                                     </div>
@@ -47,7 +44,9 @@
                                                 <div class="input-group-prepend">
                                                 </div>
                                                 <input name="batch_No" type="text" class="form-control" placeholder="Batch Number"
-                                                       aria-label="Batch Number" aria-describedby="basic-addon1" required="required">
+                                                       value="<?php echo $row['batch_No']; ?>"  aria-label="Batch Number" aria-describedby="basic-addon1" required="required">
+                                                <input name="old_batch_No" type="hidden" class="form-control" placeholder="Old Batch Number"
+                                                       value="<?php echo $row['batch_No']; ?>"  aria-label="Old Batch Number" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
 
@@ -66,7 +65,7 @@
                                                 <div class="input-group-prepend">
                                                 </div>
                                                 <input name="start_date" type="date" class="form-control" placeholder="Start Date"
-                                                       aria-label="Start Date" aria-describedby="basic-addon1" required="required">
+                                                       value="<?php echo $row['start_date']; ?>"  aria-label="Start Date" aria-describedby="basic-addon1" required="required">
                                             </div>
                                         </div>
                                     </div>
@@ -81,7 +80,8 @@
                                                 <div class="input-group-prepend">
                                                 </div>
                                                 <input name="end_date" type="date" class="form-control" placeholder="End Date"
-                                                       aria-label="End Date" aria-describedby="basic-addon1">
+                                                       value="<?php echo $row['end_date']; ?>"     aria-label="End Date" aria-describedby="basic-addon1">
+
                                             </div>
                                         </div>
                                     </div>
@@ -101,8 +101,8 @@
 </div>
 
 <script>
-   function createBatch(){
-       $("#batch_reg").submit()
-   }
+    function createBatch(){
+        $("#batch_reg").submit()
+    }
 
 </script>
