@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Online Admission</h4>
                     <form class="form-sample" id="student_reg" action="<?php echo URL; ?>addStudent/addNewStudent"
-                          method="post" onsubmit="return validate()">
+                          method="post">
                         <p class="card-description">
                             Personal information
                         </p>
@@ -15,7 +15,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">ID</label>
                                     <div class="col-sm-9">
-                                        <input name="student_id" type="text" class="form-control" value="<?php echo $this->getStudentID; ?>" readonly required/>
+                                        <input id="student_id" name="student_id" type="text" class="form-control"
+                                               value="<?php echo $this->getStudentID; ?>" readonly required/>
                                     </div>
                                 </div>
                             </div>
@@ -23,7 +24,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">NIC</label>
                                     <div class="col-sm-9">
-                                        <input name="NIC" type="text" class="form-control"/>
+                                        <input id="NIC" name="NIC" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +32,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Title</label>
                                     <div class="col-sm-9">
-                                        <select name="title" class="form-control">
+                                        <select id="title" name="title" class="form-control">
                                             <option value="Mr.">Mr.</option>
                                             <option vaule="MRs.">Mrs.</option>
                                             <option value="Miss.">Miss.</option>
@@ -46,7 +47,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">First Name</label>
                                     <div class="col-sm-9">
-                                        <input name="first_name" type="text" class="form-control" required="required"
+                                        <input id="first_name" name="first_name" type="text" class="form-control"
+                                               required="required"
                                                data-error="Firstname is required."/>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -56,7 +58,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Mid. Name</label>
                                     <div class="col-sm-9">
-                                        <input name="middle_name" type="text" class="form-control"/>
+                                        <input id="middle_name" name="middle_name" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +66,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Last Name</label>
                                     <div class="col-sm-9">
-                                        <input name="last_name" type="text" class="form-control"/>
+                                        <input id="last_name" name="last_name" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +76,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Gender</label>
                                     <div class="col-sm-9">
-                                        <select name="gender" class="form-control">
+                                        <select id="gender" name="gender" class="form-control">
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -85,7 +87,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Date of Birth</label>
                                     <div class="col-sm-9">
-                                        <input name="dob" type="date" class="form-control" placeholder="dd/mm/yyyy" required/>
+                                        <input id="dob" name="dob" type="date" class="form-control"
+                                               placeholder="dd/mm/yyyy" required/>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +101,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Mob.</label>
                                     <div class="col-sm-9">
-                                        <input name="mobile" type="text" class="form-control" pattern="[0-9]{10}"/>
+                                        <input id="mobile" name="mobile" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +109,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Land No.</label>
                                     <div class="col-sm-9">
-                                        <input name="land_phone" type="text" class="form-control" pattern="[0-9]{10}"/>
+                                        <input id="land_phone" name="land_phone" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +117,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input name="email" type="text" class="form-control" pattern=""/>
+                                        <input id="email" name="email" type="text" class="form-control" pattern=""/>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +127,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Address</label>
                                     <div class="col-sm-9">
-                                        <input name="address" type="text" class="form-control"/>
+                                        <input id="address" name="address" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +135,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">District</label>
                                     <div class="col-sm-9">
-                                        <input name="district" type="text" class="form-control"/>
+                                        <input id="district" name="district" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +148,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Work Place</label>
                                     <div class="col-sm-9">
-                                        <input name="work_place" type="text" class="form-control"/>
+                                        <input id="work_place" name="work_place" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +156,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Designation</label>
                                     <div class="col-sm-9">
-                                        <input name="designation" type="text" class="form-control"/>
+                                        <input id="designation" name="designation" type="text" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -161,21 +164,23 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">Application</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Document">
-                                    <span class="input-group-append">
+                                    <label class="col-sm-6 col-form-label">Application</label>
+                                    <input type="file" name="img[]" class="file-upload-default">
+                                    <div class="input-group col-xs-12">
+                                        <input type="text" class="form-control file-upload-info" disabled
+                                               placeholder="Upload Document">
+                                        <span class="input-group-append">
                           <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                         </span>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                            <tr>
-                            <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                        <tr>
+                            <input type="button" class="btn btn-gradient-primary mr-2" onclick="validate()"
+                                   value="Submit"/>
                             <button class="btn btn-light">Cancel</button>
-                            </tr>
+                        </tr>
                     </form>
 
                 </div>
@@ -208,73 +213,84 @@
 <!-- Custom js for this page-->
 <script src="<?php echo URL ?>public/js/dashboard.js"></script>
 <!-- End custom js for this page-->
-<script src="<?php echo URL?>public/js/sweetAlert.js"></script>
-<script src="<?php echo URL?>public/js/bootbox.min.js"></script>
-<script>
-    $(function() {
-        // init the validator
-        // validator files are included in the download package
-        // otherwise download from http://1000hz.github.io/bootstrap-validator
-
-        $("#student_reg").validator();
-
-        // when the form is submitted
-        $("#student_reg").on("submit", function(e) {
-            // if the validator does not prevent form submit
-            if (!e.isDefaultPrevented()) {
-                var url = "<?php echo URL; ?>addStudent/addNewStudent";
-
-                // FOR CODEPEN DEMO I WILL PROVIDE THE DEMO OUTPUT HERE, download the PHP files from
-                // https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form
-
-                var messageAlert = "alert-success";
-                var messageText =
-                    "Your message was sent, thank you. I will get back to you soon.";
-
-                // let's compose Bootstrap alert box HTML
-                var alertBox =
-                    '<div class="alert ' +
-                    messageAlert +
-                    ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
-                    messageText +
-                    "</div>";
-
-                // If we have messageAlert and messageText
-                if (messageAlert && messageText) {
-                    // inject the alert to .messages div in our form
-                    $("#student_reg").find(".messages").html(alertBox);
-                    // empty the form
-                    $("#student_reg")[0].reset();
-                }
-
-                return false;
-            }
-        });
-    });
-
-    function validate(){
-        var firstName = document.getElementById("first_name").value;
+<script src="<?php echo URL ?>public/js/sweetAlert.js"></script>
+<script src="<?php echo URL ?>public/js/bootbox.min.js"></script>
+<script type="text/javascript">
+    function validate() {
+        console.log("0");
+        var firstName = (document.getElementById('first_name').value);
         var dob = document.getElementById("dob").value;
-        if (firstName == ''){
+        var email = document.getElementById("email").value;
+        var mobile = document.getElementById("mobile").value;
+        var land = document.getElementById("land_phone").value;
+        console.log(firstName);
+        console.log(dob);
+        console.log(email);
+        console.log(mobile);
+        console.log(land);
+        if (firstName == ''.trim()) {
+            console.log("1");
             alert("First name is require");
-            //location.href = '#';
+            location.href = '#';
             return false;
 
         }
-        else if (dob == ''){
+        else if (dob == '') {
+            console.log("2");
             alert("Date of Birth is required");
+            location.href = '#';
             return false;
 
         }
-        else{
+
+
+        else if (!validateEmail(email)) {
+            alert("Please enter a valid email");
+            location.href = '#';
+            return false;
+        }
+
+
+        else if (!validatePhone(mobile)) {
+            alert("Please enter a valid mobile number");
+            location.href = '#';
+            return false;
+        }
+
+
+        else if (!validatePhone(land)) {
+            alert("Please enter a valid land phone number");
+            location.href = '#';
+            return false;
+
+        } else {
             $("#student_reg").submit();
+            console.log("here");
             return true;
+
         }
     }
     function validateEmail(email) {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
+        if (email == ''.trim()) {
+            return true;
+        } else {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
     }
+    function validatePhone(number) {
+        if (number == ''.trim()) {
+            return true
+        }
+        else {
+            var re = /^([0-9]{10})$/;
+            return re.test(number);
+        }
+
+    }
+
+
 </script>
 </body>
 
