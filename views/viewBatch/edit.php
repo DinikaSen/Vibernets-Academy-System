@@ -44,7 +44,7 @@
                                                 <div class="input-group-prepend">
                                                 </div>
                                                 <input name="batch_No" type="text" class="form-control" placeholder="Batch Number"
-                                                       value="<?php echo $row['batch_No']; ?>"  aria-label="Batch Number" aria-describedby="basic-addon1" required="required">
+                                                       value="<?php echo $row['batch_No']; ?>"  aria-label="Batch Number" aria-describedby="basic-addon1" readonly/>
                                                 <input name="old_batch_No" type="hidden" class="form-control" placeholder="Old Batch Number"
                                                        value="<?php echo $row['batch_No']; ?>"  aria-label="Old Batch Number" aria-describedby="basic-addon1">
                                             </div>

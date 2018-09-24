@@ -265,7 +265,6 @@
 
         } else {
             $("#student_reg").submit();
-            console.log("here");
             return true;
 
         }

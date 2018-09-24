@@ -18,16 +18,28 @@ class addCourse_model extends Model
             $course_code=$_POST['course_code'];
             $course_name = $_POST['course_name'];
             $course_fee = $_POST['course_fee'];
+            $stmt = $this->db->prepare("SELECT * FROM course WHERE course_ID=:course_ID");
+            $stmt->execute(array(
+                ':course_ID' => $course_code));
+            $count=$stmt->rowCount();
+            if($count != 0)
+            {
+                $message = "Sorry,This course ID Exists";
+                echo "<script type='text/javascript'>alert('$message');window.location = \"../addCourse/index\";</script>";
+            }
 
-            $courseData = array(
-                'course_ID'=>$course_code,
-                'course_name'=>$course_name,
-                'coursefee'=>$course_fee
-            );
+            else{
+                $courseData = array(
+                    'course_ID'=>$course_code,
+                    'course_name'=>$course_name,
+                    'coursefee'=>$course_fee
+                );
 
-            $this->db->beginTransaction();
-            $this->db->insert('course',$courseData);
-            $this->db->commit();
+                $this->db->beginTransaction();
+                $this->db->insert('course',$courseData);
+                $this->db->commit();
+            }
+
         }
         catch (Exception $e) {
             echo $e;

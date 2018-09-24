@@ -143,7 +143,21 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Total Course Fee</label>
                                         <div class="col-sm-9">
-                                            <input name="course_fee" type="text" class="form-control" value="<?php echo $rowCourse['coursefee']; ?>" readonly required/>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                    </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">LKR</span>
+                                                    </div>
+                                                    <input name="course_fee" type="text" class="form-control"
+                                                           value="<?php echo $rowCourse['coursefee']; ?>" aria-label="Amount (to the nearest LKR)" readonly/>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +168,18 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Discount Allowed</label>
                                         <div class="col-sm-9">
-                                            <input name="discount" type="text" class="form-control" />
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                    </div>
+                                                    <input  name="discount" type="text" class="form-control"
+                                                           aria-label="Amount (in percentage)" />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
