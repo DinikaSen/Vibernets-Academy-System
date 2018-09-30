@@ -73,6 +73,7 @@ echo "Table course created successfully\n";
 $sql="create table if not exists batch
 (batch_No varchar(30),
     course_ID varchar(30),
+    student_count int DEFAULT 0,
     start_date date not null,
     end_date date not null,
 	primary key(batch_No,course_ID),

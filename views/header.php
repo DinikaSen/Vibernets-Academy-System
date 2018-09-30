@@ -209,7 +209,7 @@ $adminName = Session::get('name')?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>addStudent/index">
+                    <a class="nav-link" href="<?php echo URL?>viewCourse/index">
                         <span class="menu-title">View Courses</span>
                         <i class="mdi mdi-book-open-page-variant menu-icon"></i>
                     </a>
@@ -239,19 +239,19 @@ $adminName = Session::get('name')?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>login/index">
-                        <span class="menu-title">Add Students to batches</span>
+                    <a class="nav-link" href="<?php echo URL?>enroll/index">
+                        <span class="menu-title">Enrollment</span>
                         <i class="mdi mdi-account-plus menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>views/">
+                    <a class="nav-link" href="<?php echo URL?>addBatch/index">
                         <span class="menu-title">Add New Batch</span>
                         <i class="mdi mdi-account-multiple-plus menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>views/">
+                    <a class="nav-link" href="<?php echo URL?>viewBatch/index">
                         <span class="menu-title">View Batches</span>
                         <i class="mdi mdi-google-circles-extended menu-icon"></i>
                     </a>
