@@ -19,8 +19,11 @@ $sql="create table if not exists student
 	email varchar(200),
 	workplace varchar(300),
 	designation varchar(200),
+	registrationPaid varchar(10),
+	paymentNote text,
 	application blob,
 	primary key(std_ID),
+	check (registrationPaid in ('paid','notPaid')),
 	check (gender in ('male','female')))";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
@@ -106,12 +109,13 @@ echo "Table take created successfully\n";
 
 # Payment table
 $sql="create table if not exists payment
-(   std_ID int,
+(   payment_ID int NOT NULL AUTO_INCREMENT, 
+    std_ID int,
     course_ID varchar(30),
     batch_No varchar(30),
     amount float not null,
-    payed_date date not null,
-	primary key(std_ID,batch_No,course_ID),
+    date_paid date not null,
+	primary key(payment_ID),
 	foreign key (std_ID) references student(std_ID)
 	on delete cascade,
 	foreign key (course_ID) references course(course_ID)

@@ -38,6 +38,8 @@ class addStudent_model extends Model
             $district = $_POST['district'];
             $work_place = $_POST['work_place'];
             $designation = $_POST['designation'];
+            $reg_fee_paid = $_POST['payment'];
+            $payment_note = $_POST['payment_note'];
 
             $studentData = array(
                 'std_ID'=>$student_ID,
@@ -54,7 +56,9 @@ class addStudent_model extends Model
                 'land_phone' => $land_phone,
                 'email' => $email,
                 'workplace' =>$work_place,
-                'designation' => $designation
+                'designation' => $designation,
+                'registrationPaid' =>$reg_fee_paid,
+                'paymentNote' =>$payment_note
                 );
             $this->db->beginTransaction();
             $this->db->insert('student',$studentData);

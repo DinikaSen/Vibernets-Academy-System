@@ -18,4 +18,9 @@ class payment extends Controller
     {
         $this->view->render('payment/index');
     }
+
+    function getPaymentDetails(){
+        $this->view->paymentDetails = $this->model->getPaymentDetails();
+        $this->view->render('payment/payments');
+    }
 }

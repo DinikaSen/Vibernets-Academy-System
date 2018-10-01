@@ -27,7 +27,7 @@
                         Enter student ID and course code to view payment details
                     </p>
                     <form class="form-sample"  method="post" id="course_reg"
-                          action="<?php echo URL; ?>payment/getTransactions">
+                          action="<?php echo URL; ?>payment/getPaymentDetails">
 
                         <div class="row">
                             <div class="col-md-6">

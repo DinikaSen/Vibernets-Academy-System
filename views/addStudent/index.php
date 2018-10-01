@@ -161,6 +161,30 @@
                                 </div>
                             </div>
                         </div>
+
+                        <p class="card-description">
+                            Payment of Registration Fees
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Registration Fee</label>
+                                    <div class="col-sm-9">
+                                        <input type="radio" name="payment" value="paid" checked> Paid<br>
+                                        <input type="radio" name="payment" value="notPaid"> Not Paid
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Note</label>
+                                    <div class="col-sm-9">
+                                        <input id="payment_note" name="payment_note" type="text" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group row">
