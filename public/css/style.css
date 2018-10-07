@@ -20054,7 +20054,6 @@ code {
 .card .card-title {
   color: #000;
   margin-bottom: .75rem;
-  text-transform: capitalize;
   font-family: "ubuntu-medium", sans-serif;
   font-size: 1.125rem;
 }

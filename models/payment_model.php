@@ -10,6 +10,8 @@ class payment_model extends Model
 {
     private $student_ID;
     private $course_ID;
+    private $batch_No;
+    private $amount_paid;
 
     function __construct()
     {
@@ -23,10 +25,13 @@ class payment_model extends Model
         return $stmt->fetchAll();
     }
 
-    function getStudentDetails(){
+    function getPostData(){
         $this->student_ID=$_POST['studentID'];
         $this->course_ID=$_POST['courseID'];
-        $stmt = $this->db->prepare("SELECT first_name,last_name,registrationPaid,paymentNote FROM student WHERE std_ID=:student_ID");
+    }
+
+    function getStudentDetails(){
+        $stmt = $this->db->prepare("SELECT std_ID,first_name,last_name,registrationPaid,paymentNote FROM student WHERE std_ID=:student_ID");
         $stmt->execute(array(
             ':student_ID'=>$this->student_ID));
         $count=$stmt->rowCount();
@@ -36,7 +41,7 @@ class payment_model extends Model
         }
         else{
             $message = "Sorry,Invalid student ID";
-            echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
+            //echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
         }
     }
 
@@ -49,13 +54,42 @@ class payment_model extends Model
         return $stmt->fetchAll();
     }
 
-    /*course_name varchar(200),
-    coursefee float,*/
+    function makePayment(){
+        /*payment_ID int NOT NULL AUTO_INCREMENT,
+    std_ID int,
+    course_ID varchar(30),
+    batch_No varchar(30),
+    amount float not null,
+    date_paid date not null
+        */
+        $this->student_ID=$_POST['studentID'];
+        $this->course_ID=$_POST['courseID'];
+        $this->amount_paid=$_POST['amount_paid'];
+        $this->batch_No=$_POST['batch_No'];
+        //amount_paid
+        try {
+            $paymentData = array(
+                'std_ID' => $this->student_ID,
+                'course_ID' => $this->course_ID,
+                'batch_No' => $this->batch_No,
+                'amount' => $this->amount_paid,
+                'date_paid' => getdate()
+            );
+
+            $this->db->beginTransaction();
+            $this->db->insert('payment', $paymentData);
+            $this->db->commit();
+
+        } catch (Exception $e) {
+            echo $e;
+            $this->db->rollback();
+        }
+    }
 
     function getCourseDetails(){
-        $stmt = $this->db->prepare("SELECT course_name,coursefee FROM student WHERE std_ID=:student_ID");
+        $stmt = $this->db->prepare("SELECT course_ID,course_name,coursefee FROM course WHERE course_ID =:course_ID");
         $stmt->execute(array(
-            ':student_ID'=>$this->student_ID));
+            ':course_ID'=>$this->course_ID));
         $count=$stmt->rowCount();
         if($count == 1)
         {
@@ -64,26 +98,4 @@ class payment_model extends Model
 
     }
 
-    function updateCourse(){
-
-        $course_ID=$_POST['course_code'];
-        $course_name = $_POST['course_name'];
-        $coursefee = $_POST['course_fee'];
-        $deadline = $_POST['course_deadline'];
-        try{
-            $this->db->beginTransaction();
-            $stmt = $this->db->prepare('UPDATE course SET course_name=:course_name, coursefee=:coursefee,deadline=:deadline WHERE course_ID=:course_ID');
-            $stmt->execute(array(':course_ID'=>$course_ID,
-                ':course_name'=> $course_name,
-                ':coursefee'=>$coursefee,
-                ':deadline'=>$deadline));
-            $this->db->commit();
-        }
-        catch(PDOException $e)
-        {
-            $this->db->rollBack();
-
-        }
-
-    }
 }

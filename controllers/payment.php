@@ -21,9 +21,18 @@ class payment extends Controller
     }
 
     function getPaymentDetails(){
+        $this->model->getPostData();
         $this->view->studentDetails = $this->model->getStudentDetails();
         $this->view->paymentDetails = $this->model->getPaymentDetails();
-        //$this->view->courseName = $this->model->getCourseName();
+        $this->view->courseDetails = $this->model->getCourseDetails();
         $this->view->render('payment/payments');
+    }
+
+    function makePayment(){
+        $this->model->makePayment();
+        $this->view->studentDetails = $this->model->getStudentDetails();
+        $this->view->paymentDetails = $this->model->getPaymentDetails();
+        $this->view->courseDetails = $this->model->getCourseDetails();
+        //$this->view->render('payment/payments');
     }
 }
