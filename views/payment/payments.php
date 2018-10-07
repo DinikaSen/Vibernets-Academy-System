@@ -18,6 +18,54 @@
                 </ol>
             </nav>
         </div>
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Payment Details of <?php echo "Dinika Senarath"?> for course : <?php echo "CCNA-215"?></h4>
+                    <p class="card-description">
+                    </p>
+                    <table class="table table-striped">
+                        <thead>
+                        <!-- std_ID int,
+                        course_ID varchar(30),
+                        batch_No varchar(30),
+                        amount float not null,
+                        date_paid date not null*/ -->
+                        <tr>
+                            <th>
+                                Date of the payment
+                            </th>
+                            <th>
+                                Amount paid
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($this->paymentDetails as $row){
+                            //echo '<tr  class="clickable-row" data-href="editCourse/'.$row['course_ID'].'"">';
+                           // echo '<td class="py-1">'.$row['course_ID'].'</td>';
+                            echo '<td>'.$row['date_paid'].'</td>';
+                            echo '<td>'.'LKR. '.$row['amount'].'.00'.'</td>';
+                            /*if($row['deadline']!=null) {
+                                if ($row['deadline'] < date("Y-m-d")) {
+                                    echo '<td><label class="badge badge-success">Completed</label></td>';
+                                } else {
+                                    echo '<td><label class="badge badge-warning">In progress</label></td>';
+                                }
+                            }
+                            else{
+                                echo '<td></td>';
+                            }*/
+
+                            echo '</tr>';
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
         <div class="col-12 grid-margin">
             <div class="card">
@@ -67,63 +115,6 @@
                         </tr>
                     </form>
 
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Payment Details of <?php echo "Dinika Senarath"?> for course : <?php echo "CCNA-215"?></h4>
-                    <p class="card-description">
-                    </p>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>
-                                Course Code
-                            </th>
-                            <th>
-                                Course Name
-                            </th>
-                            <th>
-                                Course Fee
-                            </th>
-                            <th>
-                                DeadLine
-                            </th>
-                            <th>
-                                Status
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        foreach ($this->courses as $row){
-                            echo '<tr  class="clickable-row" data-href="editCourse/'.$row['course_ID'].'"">';
-                            echo '<td class="py-1">'.$row['course_ID'].'</td>';
-                            echo '<td>'.$row['course_name'].'</td>';
-                            echo '<td>'.'LKR. '.$row['coursefee'].'.00'.'</td>';
-                            echo '<td>'.$row['deadline'].'</td>';
-                            if($row['deadline']!=null) {
-                                if ($row['deadline'] < date("Y-m-d")) {
-                                    echo '<td><label class="badge badge-success">Completed</label></td>';
-                                } else {
-                                    echo '<td><label class="badge badge-warning">In progress</label></td>';
-                                }
-                            }
-                            else{
-                                echo '<td></td>';
-                            }
-
-                            echo '</tr>';
-                        }
-                        ?>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

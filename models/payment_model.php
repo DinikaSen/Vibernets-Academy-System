@@ -8,29 +8,60 @@
  */
 class payment_model extends Model
 {
+    private $student_ID;
+    private $course_ID;
+
     function __construct()
     {
         parent::__construct();
     }
 
-    /* std_ID int,
-    course_ID varchar(30),
-    batch_No varchar(30),
-    amount float not null,
-    date_paid date not null*/
+    function getCourseCodes()
+    {
+        $stmt = $this->db->prepare("SELECT course_ID,deadline FROM course");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
-    function getPaymentDetails(){
-        $student_ID=$_POST['studentID'];
-        $course_ID=$_POST['courseID'];
-        $stmt= $this->db->prepare("SELECT * FROM payment WHERE course_ID =:course_ID and std_ID =:student_ID");
+    function getStudentDetails(){
+        $this->student_ID=$_POST['studentID'];
+        $this->course_ID=$_POST['courseID'];
+        $stmt = $this->db->prepare("SELECT first_name,last_name,registrationPaid,paymentNote FROM student WHERE std_ID=:student_ID");
         $stmt->execute(array(
-            ':course_ID'=>$course_ID,
-            ':student_ID'=>$student_ID
-        ));
+            ':student_ID'=>$this->student_ID));
         $count=$stmt->rowCount();
-        if($count){
+        if($count == 1)
+        {
             return $stmt->fetchAll();
         }
+        else{
+            $message = "Sorry,Invalid student ID";
+            echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
+        }
+    }
+
+    function getPaymentDetails(){
+        $stmt= $this->db->prepare("SELECT * FROM payment WHERE course_ID =:course_ID and std_ID =:student_ID");
+        $stmt->execute(array(
+            ':course_ID'=>$this->course_ID,
+            ':student_ID'=>$this->student_ID
+        ));
+        return $stmt->fetchAll();
+    }
+
+    /*course_name varchar(200),
+    coursefee float,*/
+
+    function getCourseDetails(){
+        $stmt = $this->db->prepare("SELECT course_name,coursefee FROM student WHERE std_ID=:student_ID");
+        $stmt->execute(array(
+            ':student_ID'=>$this->student_ID));
+        $count=$stmt->rowCount();
+        if($count == 1)
+        {
+            return $stmt->fetchAll();
+        }
+
     }
 
     function updateCourse(){

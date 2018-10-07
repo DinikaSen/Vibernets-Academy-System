@@ -16,11 +16,14 @@ class payment extends Controller
 
     function index()
     {
+        $this->view->courseCodes = $this->model->getCourseCodes();
         $this->view->render('payment/index');
     }
 
     function getPaymentDetails(){
+        $this->view->studentDetails = $this->model->getStudentDetails();
         $this->view->paymentDetails = $this->model->getPaymentDetails();
+        //$this->view->courseName = $this->model->getCourseName();
         $this->view->render('payment/payments');
     }
 }

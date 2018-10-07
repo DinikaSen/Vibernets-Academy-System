@@ -49,16 +49,20 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Course Code</label>
                                     <div class="col-sm-9">
-
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <input name="courseID" type="text" class="form-control" placeholder="Course Code"
-                                                       aria-label="Course Code" aria-describedby="basic-addon1" required="required">
+                                                <select name="courseID" class="form-control">
+                                                    <?php
+                                                    foreach ($this->courseCodes as $row){
+                                                        if ($row['deadline']== null or !($row['deadline'] < date("Y-m-d"))) {
+                                                            echo '<option value='.$row['course_ID'].'>'.$row['course_ID'].'</option>';
+                                                        }
+                                                    }?>
+                                                </select>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
