@@ -13,5 +13,5 @@ INSERT INTO `batch` (`batch_No`, `course_ID`, `start_date`, `end_date`) VALUES (
 
 INSERT INTO `take` (`std_ID`, `course_ID`, `batch_No`, `fee`) VALUES ('1000', 'NA125', 'BM-20180901', '20000');
 
-INSERT INTO `payment` (`std_ID`, `course_ID`, `batch_No`, `amount`, `payed_date`) VALUES ('1000', 'NA125', 'BM-20180901', '5000', '2018-09-15');
-
+INSERT INTO `payment` (`std_ID`, `course_ID`, `batch_No`, `amount`, `date_paid`) VALUES ('1000', 'NA125', 'BM-20180901', '5000', '2018-09-15');
+INSERT INTO `payment` (`std_ID`, `course_ID`, `batch_No`, `amount`, `date_paid`) VALUES ('1000', 'NA125', 'BM-20180901', '2500', '2018-09-28');

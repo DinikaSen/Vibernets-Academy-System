@@ -98,4 +98,17 @@ class payment_model extends Model
 
     }
 
+    function getTakeDetails(){
+        $stmt = $this->db->prepare("SELECT batch_No,fee FROM take WHERE course_ID =:course_ID and std_ID =:student_ID");
+        $stmt->execute(array(
+            ':course_ID'=>$this->course_ID,
+            ':student_ID'=>$this->student_ID
+        ));
+        $count=$stmt->rowCount();
+        if($count == 1)
+        {
+            return $stmt->fetchAll();
+        }
+    }
+
 }
