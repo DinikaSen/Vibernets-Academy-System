@@ -32,7 +32,7 @@
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <input name="batch" type="text" class="form-control" value=<?php echo '"'.$this->takeDetails[0]['batch_no'].'"' ?> readonly>
+                                                <input name="batch" type="text" class="form-control" value=<?php echo '"'.$this->takeDetails[0]['batch_No'].'"' ?> readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -46,7 +46,33 @@
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                 </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">LKR</span>
+                                                </div>
                                                 <input name="batch" type="text" class="form-control" value=<?php echo '"'.$this->courseDetails[0]['coursefee'].'"' ?> readonly>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Discount given</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                </div>
+                                                <?php $fee_taken = $this->takeDetails[0]['fee'];
+                                                $fee_actual = $this->courseDetails[0]['coursefee'];
+                                                $discount = (($fee_actual-$fee_taken)*100)/$fee_actual
+                                                ?>
+                                                <input name="batch" type="text" class="form-control" value=<?php echo '"'.$discount.'%"' ?> readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -72,23 +98,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Batch</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                </div>
-                                                <input name="batch" type="text" class="form-control" value=<?php echo '"'.$this->takeDetails[0]['batch_no'].'"' ?> readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Registration fees</label>
@@ -117,7 +127,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </form>
                     <table class="table table-striped">
@@ -155,7 +164,6 @@
                     </table>
                 </div>
             </div>
-        </div>
 
         <div class="col-12 grid-margin">
             <div class="card">
@@ -187,8 +195,8 @@
                             </div>
                         </div>
                         <input type="hidden" id="courseID" name="courseID" value= <?php echo '"'.($this->courseDetails[0]['course_ID']).'"' ?> />
-                        <input type="hidden" id="studentID" name="studentID" value= <?php '"'.($this->studentDetails[0]['std_ID']).'"' ?> />
-                        <input type="hidden" id="batch_No" name="batch_No" value= <?php '"'.($this->paymentDetails[0]['batch_No']).'"' ?> />
+                        <input type="hidden" id="studentID" name="studentID" value= <?php echo '"'.($this->studentDetails[0]['std_ID']).'"' ?> />
+                        <input type="hidden" id="batch_No" name="batch_No" value= <?php echo '"'.($this->takeDetails[0]['batch_No']).'"' ?> />
                         <div>
                             <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
                         </div>

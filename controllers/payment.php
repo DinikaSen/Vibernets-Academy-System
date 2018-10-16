@@ -35,6 +35,6 @@ class payment extends Controller
         $this->view->takeDetails = $this->model->getTakeDetails();
         $this->view->paymentDetails = $this->model->getPaymentDetails();
         $this->view->courseDetails = $this->model->getCourseDetails();
-        //$this->view->render('payment/payments');
+        $this->view->render('payment/payments');
     }
 }

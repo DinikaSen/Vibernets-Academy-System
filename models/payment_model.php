@@ -12,6 +12,7 @@ class payment_model extends Model
     private $course_ID;
     private $batch_No;
     private $amount_paid;
+    private $date;
 
     function __construct()
     {
@@ -55,25 +56,19 @@ class payment_model extends Model
     }
 
     function makePayment(){
-        /*payment_ID int NOT NULL AUTO_INCREMENT,
-    std_ID int,
-    course_ID varchar(30),
-    batch_No varchar(30),
-    amount float not null,
-    date_paid date not null
-        */
+
         $this->student_ID=$_POST['studentID'];
         $this->course_ID=$_POST['courseID'];
         $this->amount_paid=$_POST['amount_paid'];
         $this->batch_No=$_POST['batch_No'];
-        //amount_paid
+        $this->date = date("Y-m-d");
         try {
             $paymentData = array(
                 'std_ID' => $this->student_ID,
                 'course_ID' => $this->course_ID,
                 'batch_No' => $this->batch_No,
                 'amount' => $this->amount_paid,
-                'date_paid' => getdate()
+                'date_paid' => $this->date
             );
 
             $this->db->beginTransaction();
