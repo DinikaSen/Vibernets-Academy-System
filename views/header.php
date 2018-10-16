@@ -227,7 +227,7 @@ $adminName = Session::get('name')?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL?>login/index">
+                    <a class="nav-link" href="<?php echo URL?>attendance/index">
                         <span class="menu-title">Student Attendance</span>
                         <i class="mdi mdi-account-multiple menu-icon"></i>
                     </a>
