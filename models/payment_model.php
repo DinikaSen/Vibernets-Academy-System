@@ -42,7 +42,7 @@ class payment_model extends Model
         }
         else{
             $message = "Sorry,Invalid student ID";
-            //echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
+            echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
         }
     }
 
@@ -103,6 +103,10 @@ class payment_model extends Model
         if($count == 1)
         {
             return $stmt->fetchAll();
+        }
+        else{
+            $message = ($this->student_ID ." is not registered for course : ".$this->course_ID);
+            echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
         }
     }
 
