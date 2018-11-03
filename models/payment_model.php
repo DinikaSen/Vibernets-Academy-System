@@ -56,7 +56,6 @@ class payment_model extends Model
     }
 
     function makePayment(){
-
         $this->student_ID=$_POST['studentID'];
         $this->course_ID=$_POST['courseID'];
         $this->amount_paid=$_POST['amount_paid'];
@@ -73,11 +72,24 @@ class payment_model extends Model
 
             $this->db->beginTransaction();
             $this->db->insert('payment', $paymentData);
+            $lastID = $this->db->lastInsertId();
             $this->db->commit();
+            $receiptData = array(
+                'receiptNo' => $lastID,
+                'amountPaid' => $this->amount_paid,
+                'first_name' => $_POST['first_name'],
+                'last_name' => $_POST['last_name'],
+                'courseID' => $this->course_ID,
+                'course' => $_POST['courseName'],
+                'batch' => $this->batch_No
+            );
+            return $receiptData;
 
         } catch (Exception $e) {
             echo $e;
             $this->db->rollback();
+            $message = "Error Occured :".$e;
+            echo "<script type='text/javascript'>alert('$message');window.location = \"../payment/index\";</script>";
         }
     }
 

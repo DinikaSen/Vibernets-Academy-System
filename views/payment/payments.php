@@ -8,17 +8,12 @@
 
 ?>
 
-<div class="main-panel">
+<div class="main-panel" xmlns="http://www.w3.org/1999/html">
     <div class="content-wrapper">
         <div class="page-header">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-                </ol>
-            </nav>
+
         </div>
-        <div class="col-lg-12 grid-margin stretch-card">
+        <br class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Payment Details of <?php echo $this->studentDetails[0]['first_name']." ".$this->studentDetails[0]['last_name']?> for course : <?php echo $this->courseDetails[0]['course_ID']." - ".$this->courseDetails[0]['course_name']?></h4>
@@ -98,21 +93,22 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                             <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Registration fees</label>
-                                    <div class="col-sm-9">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Registration fees</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                    </div>
+                                                    <input name="Regfee" type="text" class="form-control" value=<?php echo '"'.$this->studentDetails[0]['registrationPaid'].'"' ?> readonly>
                                                 </div>
-                                                <input name="batch" type="text" class="form-control" value=<?php echo '"'.$this->studentDetails[0]['registrationPaid'].'"' ?> readonly>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Note on registration fees payment</label>
@@ -165,7 +161,7 @@
                 </div>
             </div>
 
-        <div class="col-12 grid-margin">
+        </br>
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">New Payment</h4>
@@ -197,8 +193,11 @@
                         <input type="hidden" id="courseID" name="courseID" value= <?php echo '"'.($this->courseDetails[0]['course_ID']).'"' ?> />
                         <input type="hidden" id="studentID" name="studentID" value= <?php echo '"'.($this->studentDetails[0]['std_ID']).'"' ?> />
                         <input type="hidden" id="batch_No" name="batch_No" value= <?php echo '"'.($this->takeDetails[0]['batch_No']).'"' ?> />
+                        <input type="hidden" id="courseName" name="courseName" value= <?php echo '"'.($this->courseDetails[0]['course_name']).'"' ?> />
+                        <input type="hidden" id="first_name" name="first_name" value= <?php echo '"'.($this->studentDetails[0]['first_name']).'"' ?> />
+                        <input type="hidden" id="last_name" name="last_name" value= <?php echo '"'.($this->studentDetails[0]['last_name']).'"' ?> />
                         <div>
-                            <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                            <button type="submit" class="btn btn-gradient-primary mr-2">Submit and Print Receipt</button>
                         </div>
                     </form>
 
@@ -208,11 +207,6 @@
 
     </div>
 </div>
+</div>
 
-<script>
-    jQuery(document).ready(function($) {
-        $(".clickable-row").click(function() {
-            window.location = $(this).data("href");
-        });
-    });
-</script>
+
