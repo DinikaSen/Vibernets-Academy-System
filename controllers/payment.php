@@ -30,7 +30,7 @@ class payment extends Controller
     }
 
     function makePayment(){
-        //$this->view->receiptDetails = $this->model->makePayment();
+        $this->view->receiptDetails = $this->model->makePayment();
         $this->view->render('payment/receipt',true);
     }
 }

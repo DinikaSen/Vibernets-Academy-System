@@ -6,17 +6,23 @@
 
     <title>Receipt</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
     <link rel='stylesheet' type='text/css' href='<?php echo URL?>public/css/receipt_style.css' />
     <link rel='stylesheet' type='text/css' href='<?php echo URL?>public/css/print.css' media="print" />
+    <style>
+        @page { size: 8in 5in } /* output size */
+        body.receipt .sheet { width: 8in; height: 5in } /* sheet size */
+        @media print { body.receipt { width: 8in } } /* fix for Chrome */
+    </style>
     <script type='text/javascript' src='<?php echo URL?>public/js/jquery-1.3.2.min.js'></script>
     <script type='text/javascript' src='<?php echo URL?>public/js/example.js'></script>
 
 </head>
 
-<body>
+<body class="receipt">
+<section class="sheet padding-10mm">
 
 <!--div id="page-wrap"-->
-<div>
 
     <div id="header">RECEIPT</div>
 
@@ -54,13 +60,13 @@
             <div class="form-group">
                 <label class="col-md-3 control" for="">Received From :</label>
                 <div class="col-md-9">
-                    <input id="" name="name" type="text" class="form-control" value=<?php echo 'Dinika Senarath'//'"'.$this->receiptDetails['first_name']." ".$this->receiptDetails['last_name'].'"' ?> readonly>
+                    <input id="" name="name" type="text" class="form-control" value=<?php echo '"'.$this->receiptDetails['first_name']." ".$this->receiptDetails['last_name'].'"' ?> readonly>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control" for="">For :</label>
                 <div class="col-md-9">
-                    <input id="" name="name" type="text" class="form-control" value=<?php echo 'CCNA - batch01'//'"'.$this->receiptDetails['course']."-".$this->receiptDetails['course'].' (Batch '.$this->receiptDetails['batch'].')"' ?> >
+                    <input id="" name="name" type="text" class="form-control" value=<?php echo '"'.$this->receiptDetails['course']."-".$this->receiptDetails['course'].' (Batch '.$this->receiptDetails['batch'].')"' ?> >
                 </div>
             </div>
         </div>
@@ -70,7 +76,7 @@
             <div class="form-group">
                 <label class="col-md-3 control" for="">Amount Received :</label>
                 <div class="col-md-9">
-                    <input id="" name="name" type="text" class="form-control" value=<?php echo "Rs.1000.00"//'"'.'Rs.'.$this->receiptDetails['amountPaid'].'.00'.'"' ?> readonly >
+                    <input id="" name="name" type="text" class="form-control" value=<?php echo '"'.'Rs.'.$this->receiptDetails['amountPaid'].'.00'.'"' ?> readonly >
                 </div>
             </div>
         </div>
@@ -114,7 +120,7 @@
             <label class="col-md-2 control" for="name">Signature</label>
         </div>
 
-
+</section>
 
 </body>
 
