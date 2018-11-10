@@ -147,5 +147,21 @@ if(! $retval ) {
     die('Could not create table attendance: ');
 }
 echo "Table attendance created successfully\n";
+
+# income and expense table
+$sql="create table if not exists incomeexpense
+(   transaction_ID int NOT NULL AUTO_INCREMENT, 
+    transaction_type varchar(20) not null,
+    description varchar(255) not null,
+    amount float not null,
+    transaction_date date not null,
+	primary key(transaction_ID)
+	)";
+$retval = mysqli_query(  $connection, $sql );
+if(! $retval ) {
+    die('Could not create table income-expense: ');
+}
+echo "Table income-expense created successfully\n";
+
 ?>
 

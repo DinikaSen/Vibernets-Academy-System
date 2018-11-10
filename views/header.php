@@ -195,6 +195,18 @@ $adminName = Session::get('name')?>
                         <i class="mdi mdi-google-circles-extended menu-icon"></i>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL?>addIncome/index">
+                        <span class="menu-title">Add Incomes $ Expenses</span>
+                        <i class="mdi mdi-google-circles-extended menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL?>viewIncome/index">
+                        <span class="menu-title">View Profit</span>
+                        <i class="mdi mdi-google-circles-extended menu-icon"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
 

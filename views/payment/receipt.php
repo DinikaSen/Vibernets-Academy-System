@@ -10,9 +10,9 @@
     <link rel='stylesheet' type='text/css' href='<?php echo URL?>public/css/receipt_style.css' />
     <link rel='stylesheet' type='text/css' href='<?php echo URL?>public/css/print.css' media="print" />
     <style>
-        @page { size: 8in 5in } /* output size */
-        body.receipt .sheet { width: 8in; height: 5in } /* sheet size */
-        @media print { body.receipt { width: 8in } } /* fix for Chrome */
+        @page { size: 9in 7in } /* output size */
+        body.receipt .sheet { width: 9in; height: 7in } /* sheet size */
+        @media print { body.receipt { width: 9in } } /* fix for Chrome */
     </style>
     <script type='text/javascript' src='<?php echo URL?>public/js/jquery-1.3.2.min.js'></script>
     <script type='text/javascript' src='<?php echo URL?>public/js/example.js'></script>
@@ -28,8 +28,8 @@
 
     <div id="identity">
 
-        <div id="address"><p style="font-size: x-large; color: #cc3700;">Vibernets Academy</p>
-            <p style="font-size: medium;">No.457/6, Canal Road, Arangala, Malabe</br>
+        <div id="address"><p style="font-size: large; color: #cc3700;">Vibernets Academy</p>
+            <p style="font-size: small;">No.457/6, Canal Road, Arangala, Malabe</br>
                 Business Registration No: Pv101083</br>
                 Phone: 0112171111, 0772101444</br>
                 Email: info@vibernets.com</br>
@@ -44,11 +44,11 @@
         <table id="meta">
             <tr>
                 <td class="meta-head">Receipt No:</td>
-                <td><?php echo "1000"// $this->receiptDetails['receiptNo'] ?></td>
+                <td><?php echo $this->receiptDetails['receiptNo'] ?></td>
             </tr>
             <tr>
                 <td class="meta-head">Date</td>
-                <td><textarea id="date"></textarea></td>
+                <td><?php echo date("Y-m-d"); ?></td>
             </tr>
         </table>
     </div>
