@@ -10,8 +10,8 @@
                     <p class="card-description">
                         Select Course and Batch to Mark student attendance
                     </p>
-                    <form class="form-sample"  method="post" id="course_reg"
-                          action="">
+                    <form class="form-sample"  method="post" id="attendance_submit"
+                          action="<?php echo URL?>attendance/getStudents">
 
                         <div class="row">
                             <div class="col-md-6">
@@ -27,7 +27,7 @@
                                                     <?php
                                                     foreach ($this->course_batch as $row){
                                                         if (($row['deadline']== null or !($row['deadline'] < date("Y-m-d"))) and !($row['end_date']<  date("Y-m-d"))){
-                                                            echo '<option value='.$row['course_ID'].$row['batch_No'].'>'.$row['course_ID']."---- Batch:".$row['batch_No'].'</option>';
+                                                            echo '<option value='.$row['course_ID'].'/'.$row['batch_No'].'>'.$row['course_ID']."---- Batch:".$row['batch_No'].'</option>';
                                                         }
                                                     }?>
                                                 </select>
