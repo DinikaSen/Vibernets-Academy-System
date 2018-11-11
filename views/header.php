@@ -197,14 +197,14 @@ $adminName = Session::get('name')?>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL?>addIncome/index">
-                        <span class="menu-title">Add Incomes $ Expenses</span>
-                        <i class="mdi mdi-google-circles-extended menu-icon"></i>
+                        <span class="menu-title">Add Incomes & Expenses</span>
+                        <i class="mdi mdi-cash-multiple menu-icon"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL?>viewIncome/index">
                         <span class="menu-title">View Profit</span>
-                        <i class="mdi mdi-google-circles-extended menu-icon"></i>
+                        <i class="mdi mdi-cash-usd menu-icon"></i>
                     </a>
                 </li>
             </ul>

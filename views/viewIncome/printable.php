@@ -12,6 +12,7 @@
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel='stylesheet' type='text/css' href='<?php echo URL?>public/css/print.css' media="print" />
     <style>
         @page { size: 9in 7in } /* output size */
         body.receipt .sheet { width: 9in; height: 7in } /* sheet size */
@@ -111,6 +112,16 @@
                 </table>
 
             </div>
+        </div>
+        <div class="noprint">
+        <form class="form-sample" id="student_reg" action="<?php echo URL; ?>viewIncome/getTransactions"
+              method="post">
+            <input type="hidden" id="fromDate" name="fromDate" value= <?php echo '"'.($this->period['from']).'"' ?> />
+            <input type="hidden" id="toDate" name="toDate" value= <?php echo '"'.($this->period['to']).'"' ?> />
+            <div class="noprint">
+                <button type="submit" class="btn btn-gradient-primary mr-2">Back to profit page</button>
+            </div>
+        </form>
         </div>
 
     </div>
