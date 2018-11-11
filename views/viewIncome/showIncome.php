@@ -45,8 +45,20 @@
                         </td>
                         <td ></td>
                     </tr>
+                    <tr>
+                        <td>
+                            <?php echo $this->period['from']." : ".$this->period['to'] ?>
+                        </td>
+                        <td >
+                            Admission fees paid by students
+                        </td>
+                        <td >
+                            <?php echo 'LKR.'.$this->admission[0][0].'.00' ?>
+                        </td>
+                        <td ></td>
+                    </tr>
                     <?php
-                    $totalIncome = $this->payment[0][0];
+                    $totalIncome = $this->payment[0][0]+$this->admission[0][0];
                     $totalExpenses = 0;
                     foreach ($this->transactions as $row){
                         echo '<tr>';

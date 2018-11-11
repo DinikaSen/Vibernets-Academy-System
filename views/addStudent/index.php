@@ -177,6 +177,29 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Registration fee</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">LKR</span>
+                                                </div>
+                                                <input name="amount" type="text" class="form-control"
+                                                       aria-label="Reg. fee (to the nearest LKR)">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Note</label>
                                     <div class="col-sm-9">
                                         <input id="payment_note" name="payment_note" type="text" class="form-control"/>

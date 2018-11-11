@@ -40,6 +40,8 @@ class addStudent_model extends Model
             $designation = $_POST['designation'];
             $reg_fee_paid = $_POST['payment'];
             $payment_note = $_POST['payment_note'];
+            $date = date("Y-m-d");
+            $amount = $_POST['amount'];
 
             $studentData = array(
                 'std_ID'=>$student_ID,
@@ -60,8 +62,18 @@ class addStudent_model extends Model
                 'registrationPaid' =>$reg_fee_paid,
                 'paymentNote' =>$payment_note
                 );
+            if($reg_fee_paid == 'paid'){
+                $admissionData = array(
+                    'std_ID'=>$student_ID,
+                    'amount'=>$amount,
+                    'date_paid'=>$date
+                );
+            }
             $this->db->beginTransaction();
             $this->db->insert('student',$studentData);
+            if($reg_fee_paid == 'paid'){
+                $this->db->insert('admission',$admissionData);
+            }
             $this->db->commit();
         }
         catch (Exception $e) {

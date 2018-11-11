@@ -163,5 +163,20 @@ if(! $retval ) {
 }
 echo "Table income-expense created successfully\n";
 
+# Admission table
+$sql="create table if not exists admission
+(   adm_ID int NOT NULL AUTO_INCREMENT, 
+    std_ID int,
+    amount float not null,
+    date_paid date not null,
+	primary key(adm_ID),
+	foreign key (std_ID) references student(std_ID)
+	on delete cascade)";
+$retval = mysqli_query(  $connection, $sql );
+if(! $retval ) {
+    die('Could not create table admission: ');
+}
+echo "Table admission created successfully\n";
+
 ?>
 

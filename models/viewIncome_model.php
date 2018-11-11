@@ -16,40 +16,6 @@ class viewIncome_model extends Model
         parent::__construct();
     }
 
-//SELECT * FROM Product_sales
-//WHERE From_date between '2013-01-03'
-//AND '2013-01-09'
-
-//    function getIncomes(){
-//        $this->fromDate=$_POST['fromDate'];
-//        $this->toDate=$_POST['toDate'];
-//        if($this->fromDate > $this->toDate){
-//            $message = "Date period is not properly defined";
-//            echo "<script type='text/javascript'>alert('$message');window.location = \"../viewIncome/index\";</script>";
-//
-//        }
-//        else {
-//            $stmt = $this->db->prepare("SELECT * FROM incomeexpense WHERE transaction_type = :type and transaction_date between :fromDate and :toDate");
-//            $stmt->execute(array(
-//                ':fromDate' => $this->fromDate,
-//                ':toDate' => $this->toDate,
-//                ':type' => 'Income'
-//            ));
-//            return $stmt->fetchAll();
-//        }
-//    }
-
-//    function getExpenses(){
-//            $stmt = $this->db->prepare("SELECT * FROM incomeexpense WHERE transaction_type = :type and transaction_date between :fromDate and :toDate");
-//            $stmt->execute(array(
-//                ':fromDate' => $this->fromDate,
-//                ':toDate' => $this->toDate,
-//                ':type' => 'Expense'
-//            ));
-//            return $stmt->fetchAll();
-//
-//    }
-
     function getTransactions(){
         $this->fromDate=$_POST['fromDate'];
         $this->toDate=$_POST['toDate'];
@@ -71,13 +37,19 @@ class viewIncome_model extends Model
 
     function getFeesPayments(){
         $stmt = $this->db->prepare("SELECT sum(amount) FROM payment WHERE date_paid between :fromDate and :toDate");
-        //SELECT sum(amount) FROM payment WHERE date_paid between '2018-10-12' and '2018-11-30'
         $stmt->execute(array(
             ':fromDate' => $this->fromDate,
             ':toDate' => $this->toDate
         ));
-        //$row = $stmt->fetchAll();
-        //$sum = $row->value_sum;
+        return $stmt->fetchAll();
+    }
+
+    function getAdmissionPayments(){
+        $stmt = $this->db->prepare("SELECT sum(amount) FROM admission WHERE date_paid between :fromDate and :toDate");
+        $stmt->execute(array(
+            ':fromDate' => $this->fromDate,
+            ':toDate' => $this->toDate
+        ));
         return $stmt->fetchAll();
     }
 

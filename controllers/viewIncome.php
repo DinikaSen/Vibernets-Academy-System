@@ -31,6 +31,7 @@ class viewIncome extends Controller
         $this->view->transactions = $this->model->getTransactions();
         $this->view->period = $this->model->getPeriod();
         $this->view->payment = $this->model->getFeesPayments();
+        $this->view->admission = $this->model->getAdmissionPayments();
         $this->view->render('viewIncome/showIncome');
     }
 
@@ -38,6 +39,7 @@ class viewIncome extends Controller
         $this->view->transactions = $this->model->getTransactions();
         $this->view->period = $this->model->getPeriod();
         $this->view->payment = $this->model->getFeesPayments();
+        $this->view->admission = $this->model->getAdmissionPayments();
         $this->view->render('viewIncome/printable',true);
 
     }
