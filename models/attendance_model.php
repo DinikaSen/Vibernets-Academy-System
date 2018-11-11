@@ -32,7 +32,46 @@ class attendance_model extends Model
             ':course_id' => $course,
             ':batch_no' => $batch
         ));
-        return $stmt->fetchAll();
+        //return $stmt->fetchAll();
+        $allStudentArray =array();
+        $count = $stmt->rowCount();
+        if($count > 0){
+            foreach ($stmt->fetchAll() as $row){
+                $stmt1 = $this->db->prepare("select * from take natural join attendance WHERE 
+            take.std_ID=:std_ID and take.course_ID=:course_ID and take.batch_No=:batch_No");
+                $stmt1->execute(array(
+                    ':std_ID' => $row['std_ID'],
+                    ':course_ID' => $row['course_ID'],
+                    ':batch_No' => $row['batch_No']
+                ));
+                $totalDays = $stmt1->rowCount();
+                $stmt2 = $this->db->prepare("select * from take natural join attendance WHERE 
+      take.std_ID=:std_ID and take.course_ID=:course_ID and take.batch_No=:batch_No and attendance.attendance=:attendance");
+                $stmt2->execute(array(
+                    ':std_ID' => $row['std_ID'],
+                    ':course_ID' => $row['course_ID'],
+                    ':batch_No' => $row['batch_No'],
+                    ':attendance' => 1
+                ));
+                $presentDays = $stmt2->rowCount();
+                if($totalDays == 0){
+                    $percentage = 0;
+                }else{
+                    $percentage = $presentDays/$totalDays*100;
+                }
+
+                $studentArray = array(
+                    'std_ID' => $row['std_ID'],
+                    'course_ID' => $row['course_ID'],
+                    'batch_No' => $row['batch_No'],
+                    'first_name' => $row['first_name'],
+                    'last_name' => $row['last_name'],
+                    'percentage' => $percentage
+                );
+                array_push($allStudentArray,$studentArray);
+            }
+        }
+        return $allStudentArray;
     }
 
     function markAttendance($std_ID,$course_ID,$batch_No)

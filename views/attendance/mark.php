@@ -26,7 +26,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Attendance of <?php echo $this->studentDetails[0]['first_name']." ".$this->studentDetails[0]['last_name']
-                    ?> for Course <?php $this->studentDetails[0]['course_ID']?></h4>
+                    ?> for Course <?php echo $this->studentDetails[0]['course_ID']?></h4>
                 <table class="table table-striped">
                     <thead>
                     <tr>

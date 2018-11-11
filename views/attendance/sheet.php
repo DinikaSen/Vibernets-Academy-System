@@ -20,6 +20,9 @@
                             <th>
                                 Student Name
                             </th>
+                            <th>
+                                Attendance Progress
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -28,7 +31,9 @@
                             echo '<tr  class="clickable-row" data-href="markAttendance/' . $row['std_ID'] . ',' .$row['course_ID'].','. $row['batch_No'].'"">';
                             echo '<td class="py-1">' . $row['std_ID'] . '</td>';
                             echo '<td>' . $row['first_name'] . " " . $row['last_name'] . '</td>';
-                            echo '<td>'."  ".'</td>';
+                            echo '<td><div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: '.$row['percentage'].'%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div></td>';
                         }
                         ?>
                     </table>
